@@ -3,7 +3,7 @@ from dash import callback, html, dcc, Input, Output, State
 import plotly.graph_objects as go
 import pandas as pd
 
-# df = pd.read
+df = pd.read_csv("time_series.csv")
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
