@@ -29,7 +29,7 @@ app.layout = html.Div(children=[
                 "textAlign": "center",
                 "color": colors["text"]
         }
-        ),
+    ),
 
     dcc.Graph(
         id='example-graph',
@@ -40,7 +40,8 @@ app.layout = html.Div(children=[
             ],
             'layout': {
                 'title': 'Dash Data Visualization',
-                "plot_bgcolor": colors["background"]
+                "plot_bgcolor": colors["background"],
+                "paper_bgcolor": colors["background"]
             }
         }
     )
