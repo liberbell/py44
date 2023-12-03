@@ -23,6 +23,16 @@ app.layout = html.Div([
                         "size":15,
                     },
                     name="Microsoft",
+                ),
+                go.Scatter(
+                    x=df["date"],
+                    y=df["AAPL"],
+                    mode="lines",
+                    opacity=0.7,
+                    marker={
+                        "size":15,
+                    },
+                    name="Apple",
                 )
             ]
         }
