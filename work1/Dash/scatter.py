@@ -21,10 +21,14 @@ app.layout = html.Div([
         figure={
             "data":[
                 go.Scatter(
-                    x = x1,
-                    y = y1,
+                    x=x1,
+                    y=y1,
                     mode="markers",
-                    opacity="0.7"
+                    opacity="0.7",
+                    marker={
+                        "size":15
+                    },
+                    name="Group1"
                 )
             ]
         }
