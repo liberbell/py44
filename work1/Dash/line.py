@@ -18,6 +18,11 @@ app.layout = html.Div([
                     x=df["date"],
                     y=df["MSFT"],
                     mode="lines",
+                    opacity=0.7,
+                    marker={
+                        "size":15,
+                    },
+                    name="Microsoft",
                 )
             ]
         }
