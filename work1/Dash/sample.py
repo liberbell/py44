@@ -39,7 +39,8 @@ app.layout = html.Div(children=[
                 {'x': [1, 2, 3], 'y': [9, 4, 5], 'type': 'bar', 'name': 'Montréal'},
             ],
             'layout': {
-                'title': 'Dash Data Visualization'
+                'title': 'Dash Data Visualization',
+                "plot_bgcolor": colors["background"]
             }
         }
     )
