@@ -37,7 +37,7 @@ app.layout = html.Div([
             ],
             "layout": go.Layout(
                 xaxis={"title": "X axis"},
-                yaxis={"title": "Y axis"},
+                yaxis={"title": "$(USD)"},
                 width=1000,
                 height=500,
             )
