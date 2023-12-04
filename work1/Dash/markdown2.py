@@ -45,7 +45,15 @@ app.layout = html.Div([
         value=["eric", "alex"]
     ),
     html.Label("Text input"),
-    dcc.Input(value="Bob", type="text")
+    dcc.Input(value="Bob", type="text"),
+
+    html.Label("Slider"),
+    dcc.Slider(
+        min=0,
+        max=10,
+        marks={i:i for i in range(1, 6)},
+        value=3
+    )
 ])
 
 if __name__ == '__main__':
