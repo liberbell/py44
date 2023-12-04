@@ -38,6 +38,8 @@ app.layout = html.Div([
             "layout": go.Layout(
                 xaxis={"title": "X axis"},
                 yaxis={"title": "Y axis"},
+                width=1000,
+                height=500,
             )
         }
     )
