@@ -34,7 +34,18 @@ app.layout = html.Div([
             {"label": "Alex", "value": "alex"},
         ],
         value="eric"
-    )
+    ),
+    html.Label("Check boxes"),
+    dcc.Checklist(
+        options=[
+            {"label": "Bob", "value": "bob"},
+            {"label": "Eric", "value": "eric"},
+            {"label": "Alex", "value": "alex"},
+        ],
+        value=["eric", "alex"]
+    ),
+    html.Label("Text input"),
+    dcc.Input(value="Bob", type="text")
 ])
 
 if __name__ == '__main__':
