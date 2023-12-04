@@ -7,14 +7,13 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 app.layout = html.Div([
-    dcc.Markdown("""
-# Title 1
-## Title 2
-
-- sub title
-- sub title
-- sub title
-""")
+    html.Label("Dropdown"),
+    dcc.Dropdown(
+        options=[
+            {"label": "Bob", "value": "bob"},
+            {"label": "Eric", "value": "eric"},
+        ]
+    )
 ])
 
 if __name__ == '__main__':
