@@ -1,6 +1,6 @@
 import dash
 from dash import callback, html, dcc, Input, Output, State
-
+import dash_daq as daq
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -48,10 +48,10 @@ app.layout = html.Div([
     dcc.Input(value="Bob", type="text"),
 
     html.Label("Slider"),
-    dcc.Slider(
+    daq.Slider(
         min=0,
         max=10,
-        marks={i:str(i) for i in range(1, 10)},
+        marks={i:i for i in range(1, 10)},
         value=3
     )
 ])
