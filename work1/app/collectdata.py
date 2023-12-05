@@ -7,4 +7,4 @@ data = requests.get(URL)
 
 soup = BeautifulSoup(data.text, "html.parser")
 
-print(soup.select(".card-title"))
+print(soup.select(".card-title")[0].string)
