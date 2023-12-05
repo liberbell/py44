@@ -7,4 +7,7 @@ data = requests.get(URL)
 
 soup = BeautifulSoup(data.text, "html.parser")
 
-print(soup.select(".card-title")[0].string)
+name = soup.select(".card-title")[0].string
+num_of_student = soup.select(".subscribers")[0].string
+num_of_student = num_of_student.split("：")[1]
+print(num_of_student)
