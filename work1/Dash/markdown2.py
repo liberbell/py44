@@ -54,7 +54,7 @@ app.layout = html.Div([
         marks={i:str(i) for i in range(1, 10)},
         value=3
     )
-])
+], style={"columnCount": 2})
 
 if __name__ == '__main__':
     app.run_server(debug=True)
