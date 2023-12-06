@@ -38,3 +38,5 @@ print(results)
 
 df = pd.concat([df, results])
 print(df.tail())
+
+df.to_csv("assets/data.csv", index=False)
