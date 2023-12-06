@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import pandas as pd
 
 URL = "https://scraping-for-beginner.herokuapp.com/udemy"
 data = requests.get(URL)
@@ -22,3 +23,6 @@ results = {
     "num_of_reviews": num_of_reviews,
 }
 print(results)
+
+df = pd.read_csv("assets/data.csv")
+print(df.head())
