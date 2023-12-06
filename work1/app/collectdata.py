@@ -13,3 +13,5 @@ num_of_student = int(num_of_student.split("：")[1])
 print(type(num_of_student), num_of_student)
 
 num_of_reviews = soup.select(".reviews")[0].string
+num_of_reviews = int(num_of_reviews.split("：")[1])
+print(type(num_of_reviews), num_of_reviews)
