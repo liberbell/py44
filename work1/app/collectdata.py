@@ -26,9 +26,12 @@ results = {
 print(results)
 
 df = pd.read_csv("assets/data.csv")
-print(df.head())
+print(df.tail())
 
 date = datetime.datetime.today().strftime("%Y/%-m/%-d")
 
 subscrivers = results["num_of_students"]
 reviews = results["num_of_reviews"]
+
+results = pd.DataFrame([[date, subscrivers, reviews]], columns=["date", "subscrivers", "reviews"])
+print(results)
