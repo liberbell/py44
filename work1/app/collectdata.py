@@ -30,10 +30,10 @@ print(df.tail())
 
 date = datetime.datetime.today().strftime("%Y/%-m/%-d")
 
-subscrivers = results["num_of_students"]
+subscribers = results["num_of_students"]
 reviews = results["num_of_reviews"]
 
-results = pd.DataFrame([[date, subscrivers, reviews]], columns=["date", "subscrivers", "reviews"])
+results = pd.DataFrame([[date, subscribers, reviews]], columns=["date", "subscribers", "reviews"])
 print(results)
 
 df = pd.concat([df, results])
