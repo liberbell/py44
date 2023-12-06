@@ -10,4 +10,6 @@ soup = BeautifulSoup(data.text, "html.parser")
 name = soup.select(".card-title")[0].string
 num_of_student = soup.select(".subscribers")[0].string
 num_of_student = int(num_of_student.split("：")[1])
-print(type(num_of_student))
+print(type(num_of_student), num_of_student)
+
+num_of_reviews = soup.select(".reviews")[0].string
