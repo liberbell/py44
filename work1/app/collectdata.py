@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import datetime
 
 URL = "https://scraping-for-beginner.herokuapp.com/udemy"
 data = requests.get(URL)
@@ -26,3 +27,8 @@ print(results)
 
 df = pd.read_csv("assets/data.csv")
 print(df.head())
+
+date = datetime.datetime.today().strftime("%Y/%-m/%-d")
+
+subscrivers = results["num_of_students"]
+reviews = results["num_of_reviews"]
