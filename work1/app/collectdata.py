@@ -35,3 +35,6 @@ reviews = results["num_of_reviews"]
 
 results = pd.DataFrame([[date, subscrivers, reviews]], columns=["date", "subscrivers", "reviews"])
 print(results)
+
+df = pd.concat([df, results])
+print(df.tail())
