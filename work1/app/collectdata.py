@@ -59,3 +59,16 @@ def get_udemy_info():
         "num_of_reviews": num_of_reviews,
     }
     return results
+
+def write_data():
+    df = pd.read_csv("assets/data.csv")
+    _results = get_udemy_info()
+
+    date = datetime.datetime.today().strftime("%Y/%-m/%-d")
+    subscribers = _results["num_of_students"]
+    reviews = _results["num_of_reviews"]
+
+    results = pd.DataFrame([[date, subscribers, reviews]], columns=["date", "subscribers", "reviews"])
+    df = pd.concat([df, results])
+
+    df.to_csv("assets/data.csv", index=False)
