@@ -36,3 +36,7 @@ def write_data():
     df = pd.concat([df, results])
 
     df.to_csv("assets/data.csv", index=False)
+
+
+df = pd.read_csv("assets/data.csv")
+print(df.head())
