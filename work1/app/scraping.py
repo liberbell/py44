@@ -34,3 +34,6 @@ def write_data():
     df = pd.concat([df, results])
 
     df.to_csv("assets/data.csv", index=False)
+
+if __name__ == "__main__":
+    write_data()
