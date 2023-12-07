@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import datetime
 
+URL = "https://scraping-for-beginner.herokuapp.com/udemy"
+
 def get_udemy_info():
     data = requests.get(URL)
     soup = BeautifulSoup(data.text, "html.parser")
