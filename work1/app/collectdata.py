@@ -46,6 +46,11 @@ date = datetime.datetime.strptime(df["date"][0], "%Y/%m/%d").date()
 print(date)
 print(type(date))
 
+dates = []
 for _date in df["date"]:
-    datetime.datetime.strptime(_date, "%Y/%m/%d").date()
-    print(_date)
+    date = datetime.datetime.strptime(_date, "%Y/%m/%d").date()
+    dates.append(date)
+
+num_of_students = df["subscribers"].values
+num_of_reviewers = df["reviews"].values
+print(num_of_reviewers)
