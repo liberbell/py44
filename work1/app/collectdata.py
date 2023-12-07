@@ -43,8 +43,8 @@ df = pd.read_csv("assets/data.csv")
 # print(type(df["date"][0]))
 
 date = datetime.datetime.strptime(df["date"][0], "%Y/%m/%d").date()
-print(date)
-print(type(date))
+# print(date)
+# print(type(date))
 
 dates = []
 for _date in df["date"]:
@@ -53,7 +53,11 @@ for _date in df["date"]:
 
 num_of_students = df["subscribers"].values
 num_of_reviewers = df["reviews"].values
+print(num_of_students)
 # print(num_of_reviewers)
 
 diff_of_students = df["subscribers"].diff().values
 print(diff_of_students)
+
+diff_of_reviewers = df["reviews"].diff().values
+print(diff_of_reviewers)
