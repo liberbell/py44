@@ -45,3 +45,7 @@ df = pd.read_csv("assets/data.csv")
 date = datetime.datetime.strptime(df["date"][0], "%Y/%m/%d").date()
 print(date)
 print(type(date))
+
+for _date in df["date"]:
+    datetime.datetime.strptime(_date, "%Y/%m/%d").date()
+    print(_date)
