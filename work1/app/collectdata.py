@@ -53,4 +53,7 @@ for _date in df["date"]:
 
 num_of_students = df["subscribers"].values
 num_of_reviewers = df["reviews"].values
-print(num_of_reviewers)
+# print(num_of_reviewers)
+
+diff_of_students = df["subscribers"].diff().values
+print(diff_of_students)
