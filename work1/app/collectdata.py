@@ -42,5 +42,6 @@ df = pd.read_csv("assets/data.csv")
 # print(df.head())
 # print(type(df["date"][0]))
 
-date = datetime.datetime.strptime(df["date"][0], "%Y/%m/%d")
+date = datetime.datetime.strptime(df["date"][0], "%Y/%m/%d").date()
+print(date)
 print(type(date))
