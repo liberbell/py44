@@ -48,7 +48,10 @@ app.layout = html.Div(children=[
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[2500, max(num_of_students)+100])
+                                 showgrid=False, range=[2500, max(num_of_students)+100]),
+                    yaxis = dict(title="Subscribers", side="right",
+                                 showgrid=False, range=[2500, max(diff_of_students[1:])+100]),
+
                 )
             }
         )
