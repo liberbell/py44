@@ -37,19 +37,19 @@ app.layout = html.Div(children=[
                         opacity=0.7,
                         yaxis="y1"
                     ),
-                    # go.Bar(
-                    #     x=dates,
-                    #     y=num_of_students,
-                    #     name="Subscribers diff",
-                    #     yaxis="y2"
-                    # )
+                    go.Bar(
+                        x=dates,
+                        y=num_of_students,
+                        name="Subscribers diff",
+                        yaxis="y2"
+                    )
                 ],
                 "layout": go.Layout(
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
                                  showgrid=False, range=[2500, max(num_of_students)+100]),
-                    yaxis2 = dict(title="Subscribers", side="right",
+                    yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_students[1:])]),
 
                 )
