@@ -22,6 +22,8 @@ num_of_reviewers = df["reviews"].values
 diff_of_students = df["subscribers"].diff().values
 diff_of_reviewers = df["reviews"].diff().values
 
+print(diff_of_students)
+
 app.layout = html.Div(children=[
     html.H2(children="Web application with Python"),
     html.Div(children=[
@@ -39,7 +41,7 @@ app.layout = html.Div(children=[
                     ),
                     go.Bar(
                         x=dates,
-                        y=num_of_students,
+                        y=diff_of_students,
                         name="Subscribers diff",
                         yaxis="y2"
                     )
