@@ -16,5 +16,11 @@ for _date in df["date"]:
     date = datetime.datetime.strptime(_date, "%Y/%m/%d").date()
     dates.append(date)
 
+num_of_students = df["subscribers"].values
+num_of_reviewers = df["reviews"].values
+
+diff_of_students = df["subscribers"].diff().values
+diff_of_reviewers = df["reviews"].diff().values
+
 if __name__ == '__main__':
     app.run_server(debug=True)
