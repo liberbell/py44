@@ -58,21 +58,21 @@ app.layout = html.Div(children=[
             },
         ),
     dcc.Graph(
-            id="subscribers_graph",
+            id="reviewers_graph",
             figure={
                 "data": [
                     go.Scatter(
                         x=dates,
-                        y=num_of_students,
+                        y=num_of_reviewers,
                         mode="lines+markers",
-                        name="Subscribers Sum",
+                        name="Reviewers Sum",
                         opacity=0.7,
                         yaxis="y1"
                     ),
                     go.Bar(
                         x=dates,
-                        y=diff_of_students,
-                        name="Subscribers diff",
+                        y=diff_of_reviewers,
+                        name="Reviewers diff",
                         yaxis="y2"
                     )
                 ],
@@ -80,9 +80,9 @@ app.layout = html.Div(children=[
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[2500, max(num_of_students)+100]),
+                                 showgrid=False, range=[2500, max(num_of_reviewers)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
-                                 showgrid=False, range=[0, max(diff_of_students[1:])]),
+                                 showgrid=False, range=[0, max(diff_of_reviewers[1:])]),
 
                 )
             },
