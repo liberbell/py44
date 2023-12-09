@@ -41,7 +41,6 @@ app.layout = html.Div(children=[
                         x=dates,
                         y=num_of_students,
                         name="Subscribers diff",
-                        opacity=0.7,
                         yaxis="y2"
                     )
                 ]
