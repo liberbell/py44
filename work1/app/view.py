@@ -5,7 +5,7 @@ import pandas as pd
 import datetime
 
 
-df = pd.read_csv("app/data.csv")
+df = pd.read_csv("assets/data.csv")
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
