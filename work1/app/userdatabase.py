@@ -19,4 +19,9 @@ row2 = Data(date=date, subscribers=3900, reviews=190)
 # db_session.add(row1, row2)
 # db_session.commit()
 
-print(db_session.query(Data).all()[1].subscribers)
+datam = db_session.query(Data).all()[1]
+print(datam)
+datam.subscribers = 13500
+print(datam.subscribers)
+db_session.add(datam)
+db_session.commit()
