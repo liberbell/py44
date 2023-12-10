@@ -10,11 +10,12 @@ date = datetime.date.today()
 row = Data(date=date, subscribers=3500, reviews=200)
 # print(row.date)
 
-db_session.add(row)
-db_session.commit()
+# db_session.add(row)
+# db_session.commit()
 
 row1 = Data(date=date, subscribers=3700, reviews=210)
 row2 = Data(date=date, subscribers=3900, reviews=190)
 
-db_session.add(row1, row2)
-db_session.commit()
+# db_session.add(row1, row2)
+# db_session.commit()
+
