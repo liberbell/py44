@@ -50,7 +50,7 @@ app.layout = html.Div(children=[
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[100, max(num_of_students)+100]),
+                                 showgrid=False, range=[2500, max(num_of_students)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_students[1:])]),
 
@@ -80,7 +80,7 @@ app.layout = html.Div(children=[
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[2500, max(num_of_reviewers)+100]),
+                                 showgrid=False, range=[100, max(num_of_reviewers)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_reviewers[1:])]),
 
