@@ -28,3 +28,8 @@ datam = db_session.query(Data).all()[1]
 
 datam = db_session.query(Data).all()[1].subscribers
 print(datam)
+
+datam = db_session.query(Data).filter_by(subscribers=13500).one()
+# print(datam.subscribers)
+db_session.delete(datam)
+db_session.commit()
