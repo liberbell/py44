@@ -3,4 +3,6 @@ from assets.database import init_db
 from assets.models import Data
 import datetime
 
-init_db()
+# init_db()
+date = datetime.date.today()
+print(date)
