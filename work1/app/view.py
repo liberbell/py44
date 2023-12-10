@@ -89,7 +89,12 @@ app.layout = html.Div(children=[
             },
         )
     ])
-])
+],
+style={
+    "textAlign": "center",
+    "width": "1200px",
+    "margin": "0 auto"
+})
 
 if __name__ == '__main__':
     app.run_server(debug=True)
