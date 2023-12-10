@@ -8,4 +8,7 @@ date = datetime.date.today()
 # print(date)
 
 row = Data(date=date, subscribers=3500, reviews=200)
-print(row.date)
+# print(row.date)
+
+db_session.add(row)
+db_session.commit()
