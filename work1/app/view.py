@@ -84,7 +84,7 @@ app.layout = html.Div(children=[
                                  showgrid=False, range=[100, max(num_of_reviewers)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_reviewers[1:])]),
-
+                    margin=dict(l=200, r=200, b=100, t=100)
                 )
             },
         )
