@@ -34,4 +34,5 @@ row2 = Data(date=date, subscribers=3900, reviews=190)
 # db_session.delete(datam)
 # db_session.commit()
 
-print(db_session.query(Data).all())
+# print(db_session.query(Data).all())
+Data.query.delete()
