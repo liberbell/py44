@@ -22,7 +22,7 @@ num_of_reviewers = df["reviews"].values
 diff_of_students = df["subscribers"].diff().values
 diff_of_reviewers = df["reviews"].diff().values
 
-print(diff_of_students)
+print(num_of_reviewers)
 
 app.layout = html.Div(children=[
     html.H2(children="Web application with Python"),
@@ -50,7 +50,7 @@ app.layout = html.Div(children=[
                     title = "Subscriber sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[2500, max(num_of_students)+100]),
+                                 showgrid=False, range=[100, max(num_of_students)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_students[1:])]),
 
