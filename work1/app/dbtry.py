@@ -33,4 +33,10 @@ def read_data():
 
 
 data = db_session.query(Data.date, Data.subscribers, Data.reviews).all()
-print(data)
+# print(data)
+
+dates = []
+subscribers = []
+reviews = []
+for datam in data:
+    print(datam.subscribers)
