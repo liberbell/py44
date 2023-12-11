@@ -11,3 +11,6 @@ print(type(df.iloc[0,0]))
 date = datetime.datetime.strptime(df.iloc[0,0], "%Y/%m/%d").date()
 print(date)
 print(type(date))
+
+for index, _df in df.iterrows():
+    print(_df.date)
