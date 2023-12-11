@@ -7,7 +7,7 @@ from assets.models import Data
 URL = "https://scraping-for-beginner.herokuapp.com/udemy"
 
 def get_udemy_info():
-    data = requests.get(URL)
+    data = requests.get(URL, timeout=10, params=None)
     soup = BeautifulSoup(data.text, "html.parser")
 
     name = soup.select(".card-title")[0].string
@@ -33,6 +33,8 @@ def write_data():
     reviews = _results["num_of_reviews"]
 
     row = Data(date=date, subscribers=subscribers, reviews=reviews)
+    db_session.add(row)
+    db_session.commit()
 
 if __name__ == "__main__":
     write_data()
