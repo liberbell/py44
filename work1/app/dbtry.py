@@ -42,3 +42,7 @@ for datam in data:
     dates.append(datam.date)
     subscribers.append(datam.subscribers)
     reviews.append(datam.reviews)
+
+# print(subscribers)
+diff_subscribers = pd.Series(subscribers).diff()
+print(diff_subscribers)
