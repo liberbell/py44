@@ -46,3 +46,4 @@ for datam in data:
 # print(subscribers)
 diff_subscribers = pd.Series(subscribers).diff().values
 print(diff_subscribers)
+print(pd.Series(reviews).diff().values)
