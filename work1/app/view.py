@@ -3,26 +3,25 @@ from dash import callback, html, dcc, Input, Output, State
 import plotly.graph_objects as go
 import pandas as pd
 import datetime
+from assets.models import Data
+from assets.database import db_session
 
-
-df = pd.read_csv("assets/data.csv")
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+data = db_session.query(Data.date, Data.subscribers, Data.reviews).all()
 dates = []
-for _date in df["date"]:
-    date = datetime.datetime.strptime(_date, "%Y/%m/%d").date()
-    dates.append(date)
+subscribers = []
+reviews = []
+for datam in data:
+    dates.append(datam.date)
+    subscribers.append(datam.subscribers)
+    reviews.append(datam.reviews)
 
-num_of_students = df["subscribers"].values
-num_of_reviewers = df["reviews"].values
-
-diff_of_students = df["subscribers"].diff().values
-diff_of_reviewers = df["reviews"].diff().values
-
-print(num_of_reviewers)
+diff_of_students = pd.Series(subscribers).diff().values
+diff_of_reviewers = pd.Series(reviews).diff().values
 
 app.layout = html.Div(children=[
     html.H2(children="Web application with Python"),
@@ -33,7 +32,7 @@ app.layout = html.Div(children=[
                 "data": [
                     go.Scatter(
                         x=dates,
-                        y=num_of_students,
+                        y=subscribers,
                         mode="lines+markers",
                         name="Subscribers Sum",
                         opacity=0.7,
@@ -50,7 +49,7 @@ app.layout = html.Div(children=[
                     title="Subscriber sum",
                     xaxis=dict(title="Date"),
                     yaxis=dict(title="Subscribers", side="left",
-                                showgrid=False, range=[2500, max(num_of_students)+100]),
+                                showgrid=False, range=[2500, max(subscribers)+100]),
                     yaxis2=dict(title="Subscriber diff", side="right", overlaying="y",
                                 showgrid=False, range=[0, max(diff_of_students[1:])]),
                     margin=dict(l=200, r=200, b=100, t=100)
@@ -64,7 +63,7 @@ app.layout = html.Div(children=[
                 "data": [
                     go.Scatter(
                         x=dates,
-                        y=num_of_reviewers,
+                        y=reviews,
                         mode="lines+markers",
                         name="Reviewers Sum",
                         opacity=0.7,
@@ -81,7 +80,7 @@ app.layout = html.Div(children=[
                     title = "Reviewer sum",
                     xaxis = dict(title="Date"),
                     yaxis = dict(title="Subscribers", side="left",
-                                 showgrid=False, range=[100, max(num_of_reviewers)+100]),
+                                 showgrid=False, range=[100, max(reviews)+100]),
                     yaxis2 = dict(title="Subscriber diff", side="right", overlaying="y",
                                  showgrid=False, range=[0, max(diff_of_reviewers[1:])]),
                     margin=dict(l=200, r=200, b=100, t=100)
